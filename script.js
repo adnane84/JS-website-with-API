@@ -28,15 +28,17 @@ const genres = [
     "id": 80,
     "name": "Crime"
   }
- 
 ];
 
 const main = document.getElementById('main');
 const form = document.getElementById('form');
 const search = document.getElementById('search');
 const tagsEl = document.getElementById('tags');
+const add = document.querySelector(".btn");
+
 
 let selectedGenre = [];
+let favoriteList = [];
 
 setGenre();
 
@@ -64,32 +66,13 @@ function setGenre() {
        console.log(selectedGenre)
        getMovies(API_URL + '&with_genres='+encodeURI(selectedGenre.join(',')));
        highlightSelection();
+      
     })
+  
     tagsEl.append(t);
   })
+  
 };
-
-
-
-function FavoritesSelection() {
-  const fav = document.querySelectorAll('.favorites');
-  fav.forEach(favorites => {
-    favorites.classList.remove('fav');
-  })
-  clearBtn();
-  if(selectedGenre.length !== 0) {
-    selectedGenre.forEach(id => {
-        const favoriteList = document.getElementById(id);
-        favoriteList.classList.add('fav');
-    })
-  }
-};
-
-
-
-
-
-
 
 function highlightSelection() {
   const tags = document.querySelectorAll('.tag');
@@ -138,6 +121,7 @@ function getMovies(url) {
     }
 
   })
+
 };
 
 
@@ -145,7 +129,7 @@ function showMovies(data) {
   main.innerHTML = '';
 
   data.forEach(movie => {
-    const {title, poster_path, vote_average, overview} = movie;
+    const {title, poster_path, vote_average, overview, id} = movie;
     const movieEl = document.createElement('div');
     movieEl.classList.add('movie');
     movieEl.innerHTML = `<img src="${IMG_URL + poster_path}" alt="${title}">
@@ -157,15 +141,30 @@ function showMovies(data) {
 
   <div class="overview">
     
-    <h3>Overview</h3>
-    <button class="btn">ADD TO FAV</button>
+    <h3>${title}</h3>
+    <button class="btn" id="${id}">ADD TO FAV</button>
     ${overview}
   </div>`
 
   main.appendChild(movieEl);
+ 
 
   });
+
+
 }
+
+
+// To add a favorite button:
+// Add a button in the card and link an event listener.
+
+// In the event listener, take the movie object and add to local storage.
+
+// To show te favorites, take the objects form the local storage and display them.
+
+
+
+
 
 function getColor(vote) {
   if(vote >= 8) {
