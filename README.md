@@ -23,7 +23,7 @@
 
 7 -The website must be built with pure HTML, CSS and JavaScript (no third party css or js libraries).
 
-8 -The items retrieved from the API must be displayed in styled HTML. (i.e. if you were working with the pokeAPI you could display the data in a "card" design with the image, attack, hitpoints, etc).
+8 -The items retrieved from the API must be displayed in styled HTML. (i.e. if you were working with the pokeAPI you could display the data in a "card" design with the image, attack, hit points, etc).
 
 9 -The website must be mobile responsive across desktop, ipad/tablet and mobile phones.
 
