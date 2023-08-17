@@ -31,3 +31,8 @@
 9 -The website must be mobile responsive across desktop, ipad/tablet and mobile phones.
 
 
+
+
+
+
+![moviesLand](https://github.com/adnane84/JS-website-with-API/assets/92402125/61ebc996-2868-45f1-a1d1-e5f01711c674)
