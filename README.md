@@ -1,5 +1,7 @@
 #Movies Land
 
+https://adn-movies-app.netlify.app/
+
 
 🛠 Requirements:
 1 -Fetch data from an API (resource provided below) and display up to 30 items from that request in your HTML.
